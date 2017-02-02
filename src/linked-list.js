@@ -106,7 +106,17 @@ class LinkedList {
         return this;
     }
 
-    indexOf(data) {}
+    indexOf(data) {
+        var current = this._head;
+        for(var i = 0; i < this.length; i++) {
+            if(current.data == data){
+                return i;
+            }
+            current = current.next;
+        }
+
+        return -1;
+    }
 }
 
 module.exports = LinkedList;

@@ -46,6 +46,7 @@ class LinkedList {
     }
 
     insertAt(index, data) {
+
         var node = new Node(data);
         var count = 0;
         var current = this._head;
@@ -64,7 +65,6 @@ class LinkedList {
             node.prev.next = node;
 
         }
-
         this.length++;
         return this;
     }
@@ -97,8 +97,7 @@ class LinkedList {
             current = current.next;
             count++;
         }
-        console.log(this.length);
-        while(count < this.length-1){
+        while(count < this.length - 1){
             current.data = current.next.data;
             current = current.next;
             count++;
@@ -116,7 +115,6 @@ class LinkedList {
             node = node.next;
             current = current.prev;
         }
-
         return this;
     }
 
@@ -128,7 +126,6 @@ class LinkedList {
             }
             current = current.next;
         }
-
         return -1;
     }
 }

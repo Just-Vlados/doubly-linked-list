@@ -90,7 +90,21 @@ class LinkedList {
 
     }
 
-    deleteAt(index) {}
+    deleteAt(index) {
+        var current = this._head;
+        var count = 0;
+        while(count < index) {
+            current = current.next;
+            count++;
+        }
+        console.log(this.length);
+        while(count < this.length-1){
+            current.data = current.next.data;
+            current = current.next;
+            count++;
+        }
+        return this;
+    }
 
     reverse() {
         var node = this._head;

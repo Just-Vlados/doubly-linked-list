@@ -25,8 +25,8 @@ class LinkedList {
     head() {
         if(this.head != null) {
             return this._head.data;
-        } 
-        return null;
+		}
+		return null;
     }
 
     tail() {
@@ -79,13 +79,13 @@ class LinkedList {
     clear() {
         var node = this._head;
         var nextNode = node.next;
-        do {
-            node.data = null;
+        while (this.length > 1){
+        	node.data = null;
             node = nextNode;
             nextNode = nextNode.next;
+            this.length--;
         }
-        while (nextNode != null);
-        this.length = 0;
+        this.length--;
         return this;
 
     }
